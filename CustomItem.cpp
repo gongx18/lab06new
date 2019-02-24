@@ -15,10 +15,10 @@ CustomItem::CustomItem(std::string size) : IceCreamItem(size){
 
 std::string CustomItem::composeItem(){
 	string str = "Custom Size: "+size +"\n";
-	str = str + "Toppings: " + "\n"; 
+	str = str + "Toppings:" + "\n"; 
 
 	for(map<string, int>::iterator itr = mp.begin(); itr != mp.end(); itr++){
-		str = str + itr->first + ": "+ std::to_string(itr->second) + "oz" +"\n"; 
+		str = str + itr->first + ": "+ std::to_string(itr->second) + " oz" +"\n"; 
 	}
  
 	string p = to_string(price);

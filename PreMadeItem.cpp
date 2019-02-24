@@ -6,7 +6,8 @@
 using namespace std;
 
 PreMadeItem :: PreMadeItem(string name, string size) : IceCreamItem(size){ 
-	this->name = name; 
+	this->name = name;
+	this->size = size;  
 	if(size == "small")
 		price = 4.00; 
 	else if(size == "medium")
@@ -32,8 +33,8 @@ string PreMadeItem::composeItem(){
 	string p = to_string(price); 
 	p.substr(0, p.size()-4);
 	
-	cout<< p << endl; 
-	str = str+ "Price: $" +p+ "\n";
+//	cout<< p << endl; 
+	str = str+ "Price: $" +p.substr(0, p.size()-4) + "\n";
 //	str = str+ "-----" + "\n";
 //	str = str+ "Total: $" + p + "\n";  
 	return str; 
