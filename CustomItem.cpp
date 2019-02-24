@@ -2,6 +2,8 @@
 #include<map>
 #include "CustomItem.h"
 #include <iterator>
+#include <iostream>
+#include<sstream>
 
 
 using namespace std; 
@@ -17,11 +19,15 @@ std::string CustomItem::composeItem(){
 
 	for(map<string, int>::iterator itr = mp.begin(); itr != mp.end(); itr++){
 		str = str + itr->first + ": "+ std::to_string(itr->second) + "oz" +"\n"; 
-	} 
-	str = str+ "Price: $" + std::to_string(price) + "\n";
-	str = str+  "-----" + "\n";
-	str = str+ "Total: $" + std::to_string(price) +"\n";  
-	
+	}
+ 
+	string p = to_string(price);
+	p = p.substr(0, p.size()-4); 
+ 
+	str = str+ "Price: $" + p + "\n";
+	//str = str+  "-----" + "\n";
+	//str = str+ "Total: $" + p +"\n";  
+	return str; 	
 }
 
 double CustomItem::getPrice(){
